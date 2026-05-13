@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage("Checking the code") {
             steps {
-                git branch: "main", url: ""
+                git branch: "main", url: "https://github.com/Priyanka22577/flask-todo-project.git"
             }
         }
 
