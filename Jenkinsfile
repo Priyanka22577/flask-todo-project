@@ -3,7 +3,7 @@ pipeline {
     agent any
 
     environment {
-        AWS_REGION = 'ap-south-2'
+        AWS_REGION = 'ap-south-1'
         PROJECT_DIR = "$WORKSPACE/flask-todo-app/"
         TERRAFORM_DIR = "$WORKSPACE/flask-todo-app/terraform-setup"
     }
@@ -69,7 +69,7 @@ pipeline {
                         sh """ 
                         docker run -e AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID} \
                                        -e AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY} \
-                                       -e AWS_REGION=ap-south-2 \
+                                       -e AWS_REGION=ap-south-1 \
                                        -e SNS_TOPIC_ARN=${env.SNS_TOPIC_ARN} \
                                        -p 5000:5000 \
                                        -d flask-todo-dynamo:v1
